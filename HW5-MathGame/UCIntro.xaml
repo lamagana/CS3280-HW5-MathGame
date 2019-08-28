@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="HW5_MathGame.UCIntro"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:local="clr-namespace:HW5_MathGame"
+             mc:Ignorable="d" 
+             d:DesignHeight="470" d:DesignWidth="820" x:Name="Introduction">
+
+    <Grid Height="470" Width="820">
+
+        <Image Source="Images/start.jpg" Stretch="Fill"/>
+        
+        <Grid Width="600" Height="140" Margin="0 135 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="175"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Label Content="Name:"          Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right"                                     Background="#BFFFFFFF" Foreground="Red" FontSize="40" FontWeight="Black"    BorderBrush="Red" BorderThickness="2"  />
+            <TextBox x:Name="NameTextBox"   Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Background="#80FFFFFF" Foreground="Red" FontSize="36" FontWeight="SemiBold" BorderBrush="Red" BorderThickness="2" TextWrapping="Wrap"/>
+
+            <Label Content="Age:"           Grid.Column="0" Grid.Row="1"  HorizontalContentAlignment="Right"                                    Background="#BFFFFFFF" Foreground="Red" FontSize="40" FontWeight="Black"    BorderBrush="Red" BorderThickness="2"/>
+            <TextBox x:Name="AgeTextBox"    Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Background="#80FFFFFF" Foreground="Red" FontSize="36" FontWeight="SemiBold" BorderBrush="Red" BorderThickness="2" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Label x:Name="InvalidNameLabel" Content="*" FontSize="50" Foreground="Red" FontWeight="Black" Margin="672,232,118,168" Width="30" Height="70" Visibility="Hidden"/>
+        <Label x:Name="InvalidAgeLabel"  Content="*" FontSize="50" Foreground="Red" FontWeight="Black" Margin="672,302,118,98"  Width="30" Height="70" Visibility="Hidden"/>
+        
+        <Button Content="Enter &gt;&gt;" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Width="130"
+                Style="{StaticResource ButtonStyle}"
+                Click="Enter_Click" Margin="0,41,57,0"/>
+
+        <Image gif:ImageBehavior.AnimatedSource="Images/coin.gif" Width="45" Margin="588,41,187,389"/>
+
+    </Grid>
+</UserControl>
